@@ -10,10 +10,12 @@ I love chosen (http://harvesthq.github.io/chosen/) for intuitive multi select of
 This is a branch of jquery.tabselect (http://fredibach.ch/jquery-plugins/tabselect.php) with a couple of extra features and a bit of cleaning up so my markdown can be exactly as a standard select box and the widget does the rest.
 
 It works for multi select
-![alt text](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg1.png)
+
+![Multi select](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg1.png)
 
 and for single select
-![alt text](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg2.png)
+
+![Single select](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg2.png)
 
 and the styling is easily customizable via css
 
@@ -39,5 +41,5 @@ To get started just download jquery.selectify.js and selectify.css and include t
 ```
 
 ## Attribution
-Thank you to [Fredi Bach](http://fredibach.ch/) for the original work and thank you to [EnvironmentJob](http://environmentjob.co.uk) for sponsoring the development of the selectify widget.
+Thank you to [Fredi Bach](http://fredibach.ch/) for the original work and thank you to [environmentjob.co.uk](http://environmentjob.co.uk) for sponsoring the development of the selectify widget.
 
