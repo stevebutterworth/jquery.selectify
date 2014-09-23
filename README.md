@@ -24,6 +24,8 @@ and the styling is easily customizable via css
 
 To get started just download jquery.selectify.js and selectify.css and include them in your html page. Then simply add some shine to those select boxes with something like this...
 
+HTML
+
 ```html
   <select class="selectify" id="languages" multiple="multiple" name="languages">
     <option value="ruby">Ruby</option>
@@ -34,6 +36,8 @@ To get started just download jquery.selectify.js and selectify.css and include t
   </select>
 ```
 
+Javascript
+
 ```javascript
   $(document).ready(function(){
     $(".selectify").selectify();
@@ -41,5 +45,5 @@ To get started just download jquery.selectify.js and selectify.css and include t
 ```
 
 ## Attribution
-Thank you to [Fredi Bach](http://fredibach.ch/) for the original work and thank you to [environmentjob.co.uk](http://environmentjob.co.uk) for sponsoring the development of the selectify widget.
+Thank you to [Fredi Bach](http://fredibach.ch/) for the original work and thank you to [environmentjob.co.uk](http://www.workingplanet.co.uk/) for sponsoring the development of the selectify widget.
 
