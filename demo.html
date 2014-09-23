@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="jquery.selectify.js"></script>
+    <link href="selectify.css" media="screen" rel="stylesheet" type="text/css"></link>
+    <script>
+      $(document).ready(function(){
+        $(".selectify").selectify();
+      })
+    </script>
+    <style>
+      body{
+        font-family: helvetica, arial, verdana;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+     Selectify Demo
+    </h1>
+    <br/>
+    <form action="/" id="email_alert_form">
+      <div class='form_row job_only'>
+        <div class='form_label'>
+          <label for="job_hours">Pretty multi select just html select and selectify plugin</label>
+          <br/>
+          <br/>
+        </div>
+        <div class='form_input'>
+          <select class="selectify" id="many_languages" multiple="multiple" name="many_languages[]">
+            <option value="ruby">Ruby</option>
+            <option value="javascript">Javascript</option>
+            <option value="swift">Swift</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+          </select>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div class='form_row job_only'>
+        <div class='form_label'>
+          <label for="job_hours">Pretty single select using html select and selectify plugin</label>
+          <br/>
+          <br/>
+        </div>
+        <div class='form_input'>
+          <select class="selectify" id="one_language" name="one_language[]">
+            <option value="ruby">Ruby</option>
+            <option value="javascript">Javascript</option>
+            <option value="swift">Swift</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
