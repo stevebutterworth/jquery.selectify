@@ -9,11 +9,11 @@ I love chosen (http://harvesthq.github.io/chosen/) for intuitive multi select of
 ## Details
 This is a branch of jquery.tabselect (http://fredibach.ch/jquery-plugins/tabselect.php) with a couple of extra features and a bit of cleaning up so my markdown can be exactly as a standard select box and the widget does the rest.
 
-It works for multi select
+It works for multi select...
 
 ![Multi select](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg1.png)
 
-and for single select
+and for single select...
 
 ![Single select](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg2.png)
 
