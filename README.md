@@ -45,5 +45,5 @@ Javascript
 ```
 
 ## Attribution
-Thank you to [Fredi Bach](http://fredibach.ch/) for the original work and thank you to [environmentjob.co.uk](http://www.workingplanet.co.uk/) for sponsoring the development of the selectify widget.
+Thank you to [Fredi Bach](http://fredibach.ch/) for the original work and thank you to [Working Planet Ltd](http://www.workingplanet.co.uk/) for sponsoring the development of the selectify widget.
 
