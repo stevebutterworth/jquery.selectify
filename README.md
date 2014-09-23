@@ -13,11 +13,11 @@ It works for multi select...
 
 ![Multi select](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg1.png)
 
-and for single select...
+...and for single select...
 
 ![Single select](https://raw.githubusercontent.com/stevebutterworth/jquery.selectify/master/images/eg2.png)
 
-and the styling is easily customizable via css
+...and the styling is easily customizable via css
 
 
 ## Code Example
