@@ -2,7 +2,7 @@
 // Originally by Fredi Bach
 // fredibach.ch
 // Updated by Steve Butterworth
-// environmentjob.co.uk
+// https://github.com/stevebutterworth/jquery.selectify
 
 (function($) {
 
