@@ -1,7 +1,7 @@
 jquery.selectify
 ================
 
-A skin for simple multi select when dealing with short lists. It uses standard HTML select boxes and jquery to add a more intuitive interface.
+A javascript widget for simple multi select when dealing with short lists. It uses standard HTML select boxes and jquery to add a more intuitive and easily cusomizable interface.
 
 ## Rational
 I love [Chosen](http://harvesthq.github.io/chosen/) for intuitive multi select of long lists such as countries but it doesn't seem like the right choice for multi select from a short list. I still wanted a select box because I wanted the same behaviour as a select box but I wanted a more intuitive UI.
