@@ -16,6 +16,7 @@
       selectedTabs: [],
       formElement: undefined,
       multipleSelections: true,
+
       onChange: function() {}
         }
 
@@ -28,11 +29,11 @@
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
-      
+
       if (plugin.settings.selectedTabs == 'all'){
         plugin.settings.selectedTabs = plugin.settings.tabElements;
       }
-      
+
       if (plugin.settings.formElement != undefined){
         if ($(plugin.settings.formElement).is("select")){
           $(plugin.settings.formElement).find(':selected').each(function(i, selected){
@@ -42,7 +43,10 @@
           plugin.settings.selectedTabs = $(plugin.settings.formElement).val().split(',');
         }
       }
-      
+
+      var nilElement = $(plugin.settings.formElement).find("option[value='']");
+      var nilTab;
+
       $.each(plugin.settings.tabElements, function(index, value){
         var tab = document.createElement('span');
         if (plugin.settings.selectedTabs.indexOf(value) == -1){
@@ -50,12 +54,30 @@
         } else {
           $(tab).html(value).addClass(plugin.settings.activeClass);
         }
+        if(value == ''){
+          nilTab = $(tab);
+          nilTab.hide();
+        }
         $(tab).click(function(){
           if($(plugin.settings.formElement).attr("multiple") == "multiple"){
             if ($(this).hasClass(plugin.settings.activeClass)){
               $(this).removeClass(plugin.settings.activeClass).addClass(plugin.settings.inactiveClass);
             } else {
               $(this).removeClass(plugin.settings.inactiveClass).addClass(plugin.settings.activeClass);
+            }
+          }
+          else if(nilElement.length != 0){
+            var clicked_item = $(this)
+            $.each($(element).find('span'), function(index, value){
+              if($(value)[0] != clicked_item[0]){
+                $(value).removeClass(plugin.settings.activeClass);
+                $(value).addClass(plugin.settings.inactiveClass);
+              }
+            });
+            clicked_item.toggleClass(plugin.settings.activeClass);
+            clicked_item.toggleClass(plugin.settings.inactiveClass);
+            if($(this).parent().find("." + plugin.settings.activeClass).length == 0){
+              nilTab.removeClass(plugin.settings.inactiveClass).addClass(plugin.settings.activeClass);
             }
           }
           else{
@@ -91,7 +113,7 @@
         }
       }
       plugin.settings.onChange(plugin.getAllSelected());
-        }
+    }
 
     plugin.getAllSelected = function() {
       var values = [];
@@ -101,8 +123,8 @@
         }
       });
       return values;
-        }
-    
+    }
+
     plugin.selectAll = function() {
       var cnt = 0;
       $element.find(plugin.settings.elementType).each(function(){
@@ -115,7 +137,7 @@
         plugin.onChange();
       }
         }
-    
+
     plugin.deselectAll = function() {
       var cnt = 0;
       $element.find(plugin.settings.elementType).each(function(){
