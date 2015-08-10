@@ -4,6 +4,12 @@
 // Updated by Steve Butterworth
 // https://github.com/stevebutterworth/jquery.selectify
 
+$.expr[':'].contains_exact = $.expr.createPseudo(function(arg) {
+    return function( elem ) {
+        return $(elem).text().match("^" + arg + "$");
+    };
+});
+
 (function($) {
 
     $.tabSelect = function(element, options) {
@@ -98,20 +104,23 @@
       if (plugin.settings.formElement != undefined){
         if ($(plugin.settings.formElement).is("select")){
           $(plugin.settings.formElement).find('option').each(function(){
-            $(this).removeAttr('selected');
+            $(this).removeProp('selected');
             $(plugin.settings.formElement).trigger("change");
           });
           var selection = plugin.getAllSelected();
           $(plugin.settings.formElement).find('option').each(function(){
             if (selection.indexOf($(this).text()) !== -1){
-              $(this).attr('selected','selected');
+              $(this).prop('selected', true);
               $(plugin.settings.formElement).trigger("change");
             }
           });
-        } else {
-          $(plugin.settings.formElement).val(plugin.getAllSelected());
         }
+        var vals = $.map(plugin.getAllSelected(), function(val, i){
+          return $(plugin.settings.formElement + " option:contains_exact('" + val + "')").attr('value');
+        })
+        $(plugin.settings.formElement).val(vals);
       }
+
       plugin.settings.onChange(plugin.getAllSelected());
     }
 
