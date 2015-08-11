@@ -102,26 +102,15 @@ $.expr[':'].contains_exact = $.expr.createPseudo(function(arg) {
 
     plugin.onChange = function(){
       if (plugin.settings.formElement != undefined){
-        if ($(plugin.settings.formElement).is("select")){
-          var multiple = $(plugin.settings.formElement).is("[multiple]")
-          $(plugin.settings.formElement).find('option').each(function(){
-            multiple ? $(this).removeAttr('selected') : $(this).removeProp('selected');
-            $(plugin.settings.formElement).trigger("change");
-          });
-          var selection = plugin.getAllSelected();
-          $(plugin.settings.formElement).find('option').each(function(){
-            if (selection.indexOf($(this).text()) !== -1){
-              multiple ? $(this).attr('selected', 'selected') : $(this).prop('selected', true);
-              $(plugin.settings.formElement).trigger("change");
-            }
-          });
-        }
         var vals = $.map(plugin.getAllSelected(), function(val, i){
           return $(plugin.settings.formElement + " option:contains_exact('" + val + "')").attr('value');
         })
+        var previous_value = $(plugin.settings.formElement).val()
         $(plugin.settings.formElement).val(vals);
+        if(previous_value != vals){
+          $(plugin.settings.formElement).trigger("change");
+        }
       }
-
       plugin.settings.onChange(plugin.getAllSelected());
     }
 
